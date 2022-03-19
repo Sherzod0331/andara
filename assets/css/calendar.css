@@ -12,6 +12,7 @@
     --light-text: #151426;
 
     --blue: #0000ff;
+    --asosiyrang: #cda45e;
     --white: #fff;
 
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -176,7 +177,7 @@
 
 .calendar-days div.curr-date,
 .calendar-days div.curr-date:hover {
-    background-color: var(--blue);
+    background-color: var(--asosiyrang);
     color: var(--white);
     border-radius: 50%;
 }

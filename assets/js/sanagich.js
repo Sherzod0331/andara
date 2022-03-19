@@ -5,6 +5,8 @@ var currentTime = date.getHours() + ':' + date.getMinutes();
 
 document.getElementById('date').value = currentDate;
 document.getElementById('time').value = currentTime;
+// document.getElementById('date1').value = currentDate;
+// document.getElementById('time1').value = currentTime;
 
 
 
@@ -49,19 +51,68 @@ function customQuantity() {
         });
     });
 }
-
 customQuantity();
 
+document.querySelectorAll('img').forEach(e=>{
+    e.loading = 'lazy'
+})
+
+
+// function drop_toggle() {
+//     var element = document.querySelector(".jadval");
+//     element.classList.toggle("jadval_active");
+// }
+// window.onclick = function (event) {
+//     if (!event.target.matches('#cardbtn')) {
+//         var dropdowns = document.querySelector("#jadval");
+//         console.log(dropdowns.classList.contains('jadval_active'));
+
+//         if (dropdowns.classList.contains('jadval_active')) {
+//             dropdowns.classList.remove('jadval_active');
+//             dropdowns.append('jadval_active');
+//         }
+//     }
+// }
+
+// window.onclick = function(event) {
+//     if (!event.target.matches('#cardbtn')) {
+//         var dropdown = document.querySelector("#jadval");
+//         console.log(dropdown);
+//             if (dropdown.classList.contains('jadval_active')) {
+//                 dropdown.classList.remove('jadval_active');
+//             }
+        
+//     }
+// }
+
+
+jQuery(document).ready(function (e) {
+    function t(t) {
+        e(t).bind("click", function (t) {
+            t.preventDefault();
+            e(this).parent().fadeOut()
+        })
+    }
+    e("#cardbtn").click(function () {
+        var t = e(this).parents(".xarid").children(".jadval").is(":hidden");
+        e(".xarid .jadval").hide();
+        e(".xarid #cardbtn").removeClass("jadval_active");
+        if (t) {
+            e(this).parents(".xarid").children(".jadval").toggle().parents(".xarid").children("#cardbtn").addClass("jadval_active")
+        }
+    });
+    e(document).bind("click", function (t) {
+        var n = e(t.target);
+        if (!n.parents().hasClass("xarid")) e(".xarid .jadval").hide();
+    });
+    e(document).bind("click", function (t) {
+        var n = e(t.target);
+        if (!n.parents().hasClass("xarid")) e(".xarid #cardbtn").removeClass("jadval_active");
+    })
+});
+
+
 var a = 0;
-function savat() {
-  if ((a++)%2==0) {
-    document.querySelector(".jadval").style.display = "block"
-    document.querySelector(".xarid_savati").style.color = "#18d26e"
-  } else {
-    document.querySelector(".jadval").style.display = "none"
-    document.querySelector(".xarid_savati").style.color = "#000"
-  }    
-}
 
 var a = 0;
 function wrapper() {
